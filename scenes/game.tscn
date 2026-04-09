@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c122sxaas03s8"]
+
+[ext_resource type="PackedScene" uid="uid://n44120q0wely" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://ogku0eb2rq4h" path="res://icon.svg" id="2_yqjtg"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
+distance = -31.0
+
+[node name="Game" type="Node2D" unique_id=1912807308]
+
+[node name="player" parent="." unique_id=1833032308 instance=ExtResource("1_uwrxv")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1079374122]
+zoom = Vector2(2, 2)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=112559669]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1111818603]
+shape = SubResource("WorldBoundaryShape2D_yqjtg")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1987537826]
+position = Vector2(0, 94)
+texture = ExtResource("2_yqjtg")
